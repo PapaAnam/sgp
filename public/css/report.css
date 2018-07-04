@@ -1,0 +1,22 @@
+body {
+	font-family: sans-serif;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+th {
+	background-color: #aaaaaa;
+}
+th, td {
+	border: 1px solid black;
+	padding: 5px;
+}
+@media print {
+	body {
+        -webkit-print-color-adjust: exact;
+    }
+}
+tr:nth-child(even){
+	background-color: #eeeeee;
+}
