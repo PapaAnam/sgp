@@ -14,10 +14,10 @@ class CreateTabelPelanggan extends Migration
     public function up()
     {
         Schema::create('konsumen', function (Blueprint $table) {
-            $table->string('nik')->primary();
-            $table->string('nama');
+            $table->string('nik', 30)->primary();
+            $table->string('nama', 50);
             $table->text('alamat');
-            $table->string('no_hp');
+            $table->string('no_hp', 20);
         });
     }
 

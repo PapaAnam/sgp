@@ -15,16 +15,22 @@ class CreateOrderFinalTable extends Migration
     {
         Schema::create('order_final', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nik');
+            $table->string('nik', 30);
             $table->integer('id_barang')->unsigned();
             $table->year('tahun')->nullable();
-            $table->string('imei')->nullable();
+            $table->string('imei', 50)->nullable();
             $table->text('kelengkapan')->nullable();
-            $table->string('pinjaman')->nullable();
-            $table->string('tenor')->nullable();
+            $table->double('pinjaman');
+            $table->string('tenor',2)->nullable();
             $table->date('jatuh_tempo');
             $table->double('jumlah_tebus');
             $table->date('tanggal');
+            $table->string('nota', 50);
+            $table->double('denda')->nullable();
+            $table->double('bunga')->nullable();
+            $table->string('status')->nullable();
+            $table->double('total_pelunasan')->nullable();
+            $table->date('tanggal_tebus')->nullable();
         });
     }
 
