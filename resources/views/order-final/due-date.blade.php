@@ -22,7 +22,7 @@
 			<tr>
 				<td>{{ $loop->iteration }}</td>
 				<td>{{ $d->tanggal }}</td>
-				<td>{{ (strtotime(date('Y-m-d')) - strtotime($d->jatuh_tempo)) / (3600 * 24) }}</td>
+				<td>{{ (strtotime(date('Y-m-d')) - ( count($d->perpanjangan) > 0 ? strtotime($d->perpanjangan[0]->jatuh_tempo) : strtotime($d->jatuh_tempo) ) ) / (3600 * 24) }}</td>
 				<td>{{ $d->konsumen->nama }}</td>
 				<td>{{ $d->barang->nama }}</td>
 				<td>{{ $d->pinjaman_rp }}</td>

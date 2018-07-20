@@ -216,7 +216,9 @@ class OrderFinalController extends Controller
     public function dueDate()
     {
         return view('order-final.due-date', [
-            'data'=>OrderFinal::with('barang', 'konsumen')->orderBy('tanggal_tebus')->get(),
+            'data'=>OrderFinal::with(['barang', 'konsumen', 'perpanjangan'=>function($q){
+                $q->take(1)->orderBy('id', 'desc');
+            }])->whereNull('status')->orderBy('tanggal_tebus')->get(),
         ]);
     }
 
