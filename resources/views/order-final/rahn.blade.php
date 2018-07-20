@@ -25,7 +25,7 @@
 				<td>{{ $d->konsumen->nama }}</td>
 				<td>{{ $d->barang->nama }}</td>
 				<td align="right">{{ $d->pinjaman_rp }}</td>
-				<td align="right">{{ $d->bunga_rp }}</td>
+				<td align="right">{{ number_format($d->jumlah_tebus - $d->pinjaman, 2, ',', '.') }}</td>
 			</tr>
 			@endforeach
 			<tr style="font-weight: bold;">
