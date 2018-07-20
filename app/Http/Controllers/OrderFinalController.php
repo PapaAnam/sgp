@@ -202,7 +202,7 @@ class OrderFinalController extends Controller
         $total_konsumen=Konsumen::count();
         $total_barang=Barang::count();
         $total_pinjaman=$data->sum(function($i){return $i->pinjaman;});
-        $total_bunga=$data->sum(function($i){return $i->bunga;});
+        $total_bunga=$data->sum(function($i){return $i->jumlah_tebus-$i->pinjaman;});
         return view('order-final.rahn', [
             'data'=>$data,
             'total'=>$total,
