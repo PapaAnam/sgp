@@ -47,7 +47,7 @@
 				<td align="right">{{ $d->bunga_baru_rp }}</td>
 				<td align="right">{{ $d->denda_rp }}</td>
 				<td align="right">{{ $d->admin_rp }}</td>
-				<td></td>
+				<td align="right">{{ number_format($d->bunga + $d->denda + $d->admin, 2, ',', '.') }}</td>
 			</tr>
 			@endforeach
 		</tbody>

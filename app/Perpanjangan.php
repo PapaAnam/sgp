@@ -48,7 +48,7 @@ class Perpanjangan extends Model
 
 	public function getBungaBaruRpAttribute()
 	{
-		return number_format($this->jumlah_tebus-$this->order->pinjaman);
+		return number_format($this->jumlah_tebus-$this->order->pinjaman, 2, ',', '.');
 	}
 
 	public function getJumlahBayarRpAttribute()
